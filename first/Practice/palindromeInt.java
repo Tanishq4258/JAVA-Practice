@@ -1,6 +1,6 @@
 package Practice;
 
-public class palindrome {
+public class palindromeInt {
     public static void main(String[] args){
         int n=12566521, temp = n, rev=0;
         while(n>0){
