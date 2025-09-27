@@ -9,7 +9,8 @@ public class delete_element_in_array_rightShift {
         }
         arr[0] = 0;
         for(int i=1;i<arr.length;i++){
-            System.out.print(arr[i] + " ");
+            System.out.print(arr[i] + " " +
+                    "");
         }
     }
 }

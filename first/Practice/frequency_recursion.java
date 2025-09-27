@@ -1,7 +1,7 @@
 package Practice;
 
 public class frequency_recursion {
-    static int freq(int[] arr, int n, int x){
+    static int freq(int arr[], int n, int x){
         if(n==0 ) return 0;
         if(arr[n-1]==x) return 1+freq(arr,n-1,x);
         else return freq(arr,n-1,x);
