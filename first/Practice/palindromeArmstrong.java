@@ -1,27 +1,39 @@
-public static boolean armstrong(int num){
-    int original = num;  // keep original number
-    int temp = num, sum = 0, count = 0;
+package Practice;
 
-    // count digits
-    while(temp != 0){
-        count++;
-        temp /= 10;
-    }
-
-    temp = num;
-    // calculate sum of digits^count
-    while(temp != 0){
-        int digit = temp % 10;
-        int power = 1;
-
-        // manual power calculation without Math.pow
-        for(int i = 0; i < count; i++){
-            power *= digit;
+public class palindromeArmstrong {
+    public static void main(String[] main){
+        int num=1221;
+        if(palindrome(num)){
+            System.out.println("Palindrome");
         }
-
-        sum += power;
-        temp /= 10;
+        if(armstrong(num)){
+            System.out.println("Armstrong");
+        }
+    }
+    public static boolean palindrome(int num){
+        int temp = num, rev = 0;
+        while(num>0){
+            rev = rev * 10 + (num%10);
+            num/=10;
+        }
+        return temp==rev;
     }
 
-    return sum == original;
+    public static boolean armstrong(int num){
+        int temp2 = num, sum=0, count=0;
+        while(temp2!=0){
+            temp2/=10;
+            count++;
+        }
+        while(num>0){
+            sum+= (int)Math.pow(temp2,count);
+            num/=10;
+        }
+        if(temp2 == sum){
+            return true;
+        }
+        else return false;
+
+    }
+
 }
